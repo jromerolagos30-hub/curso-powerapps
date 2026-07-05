@@ -4,139 +4,180 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workshop Power Apps SST | Ing. Jonathan Romero Lagos</title>
-  <meta name="description" content="Workshop para desarrollar aplicativos de SST usando Power Apps, SharePoint, Power Automate y Power BI." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <meta name="description" content="Workshop práctico para desarrollar aplicativos de SST usando Power Apps, SharePoint, Power Automate y Power BI. Incluye proyectos reales, clases grabadas y asesoría personalizada." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#inicio"><span>Power Apps SST</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
-    <nav id="nav">
-      <a href="#temario">Temario</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#inversion">Inversión</a>
-      <a href="#inscripcion" class="nav-cta">Inscribirme</a>
+  <header class="site-header" id="inicio">
+    <nav class="nav wrap">
+      <a class="brand" href="#inicio"><span></span><strong>Power Apps SST</strong></a>
+      <button class="menu-btn" aria-label="Abrir menú" id="menuBtn">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#temario">Temario</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#inversion">Inversión</a>
+        <a class="nav-cta" href="#inscripcion">Inscribirme</a>
+      </div>
     </nav>
   </header>
 
-  <main id="inicio">
-    <section class="hero">
-      <div class="hero-content">
-        <span class="pill">Workshop práctico · 8 horas</span>
-        <h1>Desarrolla un aplicativo de SST usando Power Apps</h1>
-        <p>Aprende a crear un aplicativo funcional desde el bosquejo inicial, listas en SharePoint, pantallas en Power Apps, flujos en Power Automate y visualización de datos en Power BI.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#inscripcion">Quiero inscribirme</a>
-          <a class="btn secondary" href="#proyectos">Ver proyectos desarrollados</a>
+  <main>
+    <section class="hero section">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Workshop práctico · 8 horas · En vivo + grabación</p>
+          <h1>Desarrolla un aplicativo de SST usando Microsoft Power Apps</h1>
+          <p class="lead">Aprende a construir soluciones digitales reales para seguridad y salud: desde el bosquejo inicial, listas en SharePoint, formularios en Power Apps, flujos en Power Automate y dashboards en Power BI.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#inscripcion">Quiero inscribirme</a>
+            <a class="btn ghost" href="#proyectos">Ver proyectos reales</a>
+          </div>
+          <div class="metrics">
+            <article><b>8 h</b><span>de workshop</span></article>
+            <article><b>7</b><span>módulos prácticos</span></article>
+            <article><b>S/ 300</b><span>inversión</span></article>
+          </div>
         </div>
-        <div class="stats">
-          <div><strong>8 h</strong><span>de workshop</span></div>
-          <div><strong>7</strong><span>módulos</span></div>
-          <div><strong>S/ 300</strong><span>inversión</span></div>
+        <div class="hero-visual reveal">
+          <div class="glow"></div>
+          <img src="assets/hero-workshop.png" alt="Workshop desarrollando aplicativo de SST usando Power Apps" />
+          <div class="floating-card card-one">Power Apps</div>
+          <div class="floating-card card-two">SharePoint + Power BI</div>
         </div>
-      </div>
-      <div class="hero-card">
-        <img src="assets/hero-workshop.png" alt="Workshop desarrollando aplicativo de SST usando Power Apps">
       </div>
     </section>
 
-    <section class="logos-strip">
-      <span>Power Apps</span><span>SharePoint</span><span>Power Automate</span><span>Power BI</span><span>Microsoft 365</span>
+    <section class="section logos-strip">
+      <div class="wrap stack-line">
+        <span>Herramientas que usarás:</span>
+        <b>Power Apps</b><b>SharePoint</b><b>Power Automate</b><b>Power BI</b><b>Microsoft 365</b>
+      </div>
     </section>
 
     <section class="section" id="beneficios">
-      <div class="section-head">
-        <span class="kicker">¿Qué lograrás?</span>
-        <h2>Digitaliza procesos de seguridad y salud en el trabajo</h2>
-        <p>El curso está enfocado en casos reales de SST: registros digitales, inspecciones, dashboards y automatización de reportes.</p>
-      </div>
-      <div class="cards three">
-        <article class="card"><h3>Crear tu app desde cero</h3><p>Diseñarás pantallas, botones, formularios, navegación, listas y estructura de datos.</p></article>
-        <article class="card"><h3>Conectar con SharePoint</h3><p>Registrarás información en listas para reemplazar formatos físicos y centralizar datos.</p></article>
-        <article class="card"><h3>Automatizar y analizar</h3><p>Usarás Power Automate para flujos y Power BI para visualizar indicadores.</p></article>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Enfoque del curso</p>
+          <h2>Aprendizaje basado en aplicativos reales de SST</h2>
+          <p>No es un curso teórico. Trabajarás con una metodología aplicada para diseñar, registrar, automatizar y visualizar información de seguridad y salud.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit reveal"><span>01</span><h3>Diseño del aplicativo</h3><p>De la idea y bosquejo inicial al flujo completo de pantallas, formularios, navegación y validaciones.</p></article>
+          <article class="benefit reveal"><span>02</span><h3>Base de datos en SharePoint</h3><p>Creación de sitios, listas, columnas, relaciones y origen de datos para tus registros digitales.</p></article>
+          <article class="benefit reveal"><span>03</span><h3>Automatización</h3><p>Flujos con Power Automate para guardar registros, enviar correos y mejorar el control documental.</p></article>
+          <article class="benefit reveal"><span>04</span><h3>Dashboard gerencial</h3><p>Visualización de indicadores en Power BI para seguimiento, análisis y toma de decisiones.</p></article>
+        </div>
       </div>
     </section>
 
     <section class="section dark" id="temario">
-      <div class="section-head light">
-        <span class="kicker">Temario</span>
-        <h2>Contenido del workshop</h2>
-        <p>Ruta práctica para construir un aplicativo real aplicado a SST.</p>
-      </div>
-      <div class="timeline">
-        <div class="step"><span>01</span><div><h3>Planeamiento inicial</h3><p>Bosquejo inicial con mockups, herramientas visuales y definición del aplicativo final.</p></div></div>
-        <div class="step"><span>02</span><div><h3>SharePoint</h3><p>Creación de sitios, listas, columnas y origen de datos del aplicativo.</p></div></div>
-        <div class="step"><span>03</span><div><h3>Power Apps Parte 1</h3><p>Creación de apps, navegación, botones, imágenes, etiquetas, formularios y envío de datos.</p></div></div>
-        <div class="step"><span>04</span><div><h3>Power Apps Parte 2</h3><p>Uso de Patch, galería, edición de registros e inserción de tablas.</p></div></div>
-        <div class="step"><span>05</span><div><h3>Power Automate</h3><p>Flujos para actualizar datos y guardar registros digitales desde Power Apps.</p></div></div>
-        <div class="step"><span>06</span><div><h3>Power Apps Parte 3</h3><p>Interfaz para visualizar formatos digitales y enviar registros por correo.</p></div></div>
-        <div class="step"><span>07</span><div><h3>Power BI</h3><p>Importación de registros, medidas DAX y visualización de dashboards.</p></div></div>
-      </div>
-      <div class="temario-images">
-        <img src="assets/temario-1.png" alt="Temario parte 1">
-        <img src="assets/temario-2.png" alt="Temario parte 2">
+      <div class="wrap">
+        <div class="section-head light reveal">
+          <p class="eyebrow">Temario</p>
+          <h2>Ruta de aprendizaje del workshop</h2>
+          <p>Contenido organizado por módulos para que termines con un aplicativo funcional y replicable.</p>
+        </div>
+        <div class="timeline">
+          <div class="time-card reveal"><b>Módulo 01</b><h3>Planeamiento inicial</h3><p>Bosquejo, herramientas de diseño y estructura del proyecto final.</p></div>
+          <div class="time-card reveal"><b>Módulo 02</b><h3>SharePoint</h3><p>Creación de sitio, listas, orígenes de datos y estructura de información.</p></div>
+          <div class="time-card reveal"><b>Módulo 03</b><h3>Power Apps I</h3><p>Aplicativos desde listas, imágenes, botones, formularios y función SubmitForm.</p></div>
+          <div class="time-card reveal"><b>Módulo 04</b><h3>Power Apps II</h3><p>Patch, edición de registros, control de errores e inserción de tablas.</p></div>
+          <div class="time-card reveal"><b>Módulo 05</b><h3>Power Automate</h3><p>Flujos hacia SharePoint, correos y registro documental.</p></div>
+          <div class="time-card reveal"><b>Módulo 06</b><h3>Power Apps III</h3><p>Envío de registros digitales al SharePoint y Outlook.</p></div>
+          <div class="time-card reveal"><b>Módulo 07</b><h3>Power BI</h3><p>Importación de registros, medidas DAX y dashboards.</p></div>
+        </div>
+        <div class="temario-images reveal">
+          <img src="assets/temario-1.png" alt="Temario del workshop módulos 1 al 3" />
+          <img src="assets/temario-2.png" alt="Temario del workshop módulos 4 al 7" />
+        </div>
       </div>
     </section>
 
     <section class="section" id="proyectos">
-      <div class="section-head">
-        <span class="kicker">Portafolio aplicado</span>
-        <h2>Proyectos que se mostrarán como referencia</h2>
-        <p>Estos ejemplos demuestran cómo Power Apps puede transformar procesos operativos de SST en registros digitales y tableros de control.</p>
-      </div>
-      <div class="project-grid">
-        <article class="project"><img src="assets/seguridad-1.jpg" alt="App inspección de EPP"><div><h3>Inspección de EPP</h3><p>Aplicativo para inspeccionar equipos de protección personal, medir cumplimiento y generar dashboards para toma de decisiones.</p></div></article>
-        <article class="project"><img src="assets/seguridad-2.jpg" alt="App equipos de emergencia"><div><h3>Equipos de emergencia</h3><p>Registro, inventario e inspección de extintores con estado operativo, vencimientos y seguimiento digital.</p></div></article>
-        <article class="project"><img src="assets/seguridad-3.jpg" alt="App OPT"><div><h3>Observaciones Planeadas de Tarea</h3><p>Gestión de OPT para documentar tareas, identificar desviaciones y promover acciones correctivas.</p></div></article>
-        <article class="project"><img src="assets/seguridad-4.jpg" alt="App inspección interna SST"><div><h3>Inspección interna SST</h3><p>Digitalización de inspecciones internas conforme a formato RM-050-2013, con seguimiento de hallazgos.</p></div></article>
-        <article class="project"><img src="assets/salud-1.jpg" alt="App monitoreo de ruido"><div><h3>Monitoreo de ruido</h3><p>Registro de mediciones, cálculo de atenuación y horas máximas de exposición para gestión preventiva.</p></div></article>
-        <article class="project"><img src="assets/digital-1.jpg" alt="App entrega de EPP"><div><h3>Entrega de EPP / emergencia</h3><p>Kardex digital, control de inventario, registros en SharePoint y reportes para análisis de consumo.</p></div></article>
-      </div>
-    </section>
-
-    <section class="section split" id="inversion">
-      <div>
-        <span class="kicker">Detalles</span>
-        <h2>Información del workshop</h2>
-        <ul class="checklist">
-          <li><strong>Duración:</strong> 8 horas.</li>
-          <li><strong>Módulos 01 al 03:</strong> 11 de enero, 14:00 a 17:00.</li>
-          <li><strong>Módulos 04 al 07:</strong> 12 de enero, 08:00 a 11:00.</li>
-          <li><strong>Asesoramiento personalizado:</strong> 2 horas.</li>
-          <li><strong>Incluye:</strong> clases grabadas, tutoría personalizada y licencia educativa Microsoft 365 por 14 días desde el inicio.</li>
-          <li><strong>Inversión:</strong> S/ 300.</li>
-        </ul>
-      </div>
-      <div class="price-card">
-        <h3>Inscripción al workshop</h3>
-        <p class="price">S/ 300</p>
-        <p>Vacantes sujetas a cobertura mínima de 10 inscritos.</p>
-        <a class="btn primary full" href="#inscripcion">Reservar vacante</a>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Portafolio incluido</p>
+          <h2>Proyectos reales que inspiran el workshop</h2>
+          <p>Estos casos muestran el tipo de soluciones que aprenderás a diseñar y replicar para diferentes procesos de SST.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project reveal"><img src="assets/seg-1.jpg" alt="Aplicativo de inspección de EPP"/><div><span>Power Apps + Power BI</span><h3>Inspección de EPP</h3><p>Registro digital para inspeccionar EPP básico, trabajos en caliente y trabajos en altura, con porcentaje de cumplimiento y dashboard.</p></div></article>
+          <article class="project reveal"><img src="assets/seg-2.jpg" alt="Pantallas de inspección de EPP"/><div><span>Control operativo</span><h3>Cumplimiento de EPP</h3><p>Captura de datos, evaluación de cumplimiento, recomendaciones y toma de decisiones basada en datos.</p></div></article>
+          <article class="project reveal"><img src="assets/seg-3.jpg" alt="Aplicativo de extintores"/><div><span>Inventario + inspección</span><h3>Equipos de emergencia</h3><p>Gestión de extintores, inventarios, inspecciones, vencimientos y estado operativo en tiempo real.</p></div></article>
+          <article class="project reveal"><img src="assets/seg-5.jpg" alt="Observaciones planeadas de tarea"/><div><span>Gestión preventiva</span><h3>Observaciones Planeadas de Tarea</h3><p>Documentación de tareas, identificación de desviaciones y seguimiento de acciones correctivas.</p></div></article>
+          <article class="project reveal"><img src="assets/seg-6.jpg" alt="Inspección interna SST"/><div><span>RM-050-2013</span><h3>Inspección interna SST</h3><p>Digitalización de inspecciones internas con registro, seguimiento de hallazgos y generación de reportes.</p></div></article>
+          <article class="project reveal"><img src="assets/salud-1.jpg" alt="Monitoreo de ruido"/><div><span>Higiene ocupacional</span><h3>Monitoreo de ruido</h3><p>Registro de mediciones, cálculo de atenuación final y horas máximas de exposición para gestión preventiva.</p></div></article>
+          <article class="project reveal"><img src="assets/dig-1.jpg" alt="Entrega de EPP"/><div><span>SharePoint + kardex</span><h3>Entrega de EPP / emergencia</h3><p>Kardex digital, inventario, entrega de equipos, reportes y análisis de consumo semanal o mensual.</p></div></article>
+          <article class="project reveal"><img src="assets/dig-5.jpg" alt="Ventajas de proceso digital"/><div><span>Transformación digital</span><h3>Procesos digitales en SST</h3><p>Eliminación de formularios físicos, registros centralizados, descarga de data y dashboards gerenciales.</p></div></article>
+        </div>
       </div>
     </section>
 
-    <section class="section enrollment" id="inscripcion">
-      <div class="section-head light">
-        <span class="kicker">Inscripciones e informes</span>
-        <h2>Reserva tu vacante por WhatsApp</h2>
-        <p>Completa tus datos y se abrirá WhatsApp con el mensaje de inscripción listo para enviar.</p>
+    <section class="section pale" id="inversion">
+      <div class="wrap pricing-grid">
+        <div class="pricing-copy reveal">
+          <p class="eyebrow">Detalles del workshop</p>
+          <h2>Una inversión práctica para crear soluciones reales</h2>
+          <p>Incluye clases grabadas, tutoría personalizada y licencia educativa Microsoft 365 por 14 días desde el inicio del workshop.</p>
+          <ul class="check-list">
+            <li>Duración: 8 horas.</li>
+            <li>Módulos 01 al 03: 11 de enero, 14:00 a 17:00.</li>
+            <li>Módulos 04 al 07: 12 de enero, 08:00 a 11:00.</li>
+            <li>Asesoramiento personalizado: 2 horas.</li>
+          </ul>
+        </div>
+        <aside class="price-card reveal">
+          <span>Inversión</span>
+          <strong>S/ 300</strong>
+          <p>Cupos sujetos a cobertura mínima de 10 inscritos.</p>
+          <a class="btn primary full" href="#inscripcion">Reservar mi cupo</a>
+        </aside>
       </div>
-      <form id="inscriptionForm" class="form-card">
-        <div class="form-row"><label>Nombres y apellidos<input required name="nombre" placeholder="Ej. Carlos Pérez"></label><label>Empresa / institución<input name="empresa" placeholder="Ej. Contratista, empresa o independiente"></label></div>
-        <div class="form-row"><label>Celular<input required name="celular" placeholder="Ej. 999 999 999"></label><label>Correo<input type="email" name="correo" placeholder="correo@empresa.com"></label></div>
-        <label>Mensaje<textarea name="mensaje" rows="4" placeholder="Deseo información para inscribirme al Workshop de Power Apps SST."></textarea></label>
-        <button class="btn primary full" type="submit">Enviar inscripción por WhatsApp</button>
-      </form>
-      <p class="contact-line">También puedes escribir directamente al <strong>+51 966 840 281</strong> · Ing. Jonathan Romero Lagos</p>
+    </section>
+
+    <section class="section instructor">
+      <div class="wrap instructor-card reveal">
+        <div>
+          <p class="eyebrow">Instructor</p>
+          <h2>Ing. Jonathan Romero Lagos</h2>
+          <p>Especialista en SST y transformación digital aplicada a procesos de seguridad, con experiencia desarrollando aplicativos, flujos y dashboards para gestionar registros operativos de manera más ágil y trazable.</p>
+        </div>
+        <div class="instructor-badges"><span>Power Apps</span><span>SharePoint</span><span>Power Automate</span><span>Power BI</span><span>SST</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="inscripcion">
+      <div class="wrap form-grid">
+        <div class="section-head align-left reveal">
+          <p class="eyebrow">Inscripciones e informes</p>
+          <h2>Solicita tu inscripción por WhatsApp</h2>
+          <p>Completa tus datos y se abrirá WhatsApp con un mensaje listo para enviar.</p>
+          <div class="contact-box">📲 +51 966 840 281</div>
+        </div>
+        <form class="form-card reveal" id="leadForm">
+          <label>Nombre y apellido<input type="text" id="nombre" placeholder="Ej. Carlos Pérez" required /></label>
+          <label>Empresa o institución<input type="text" id="empresa" placeholder="Ej. Contratista / Independiente" /></label>
+          <label>Celular<input type="tel" id="celular" placeholder="Ej. 999 999 999" required /></label>
+          <label>Correo<input type="email" id="correo" placeholder="correo@empresa.com" /></label>
+          <label>Consulta<textarea id="mensaje" rows="4" placeholder="Deseo información para inscribirme al workshop de Power Apps SST"></textarea></label>
+          <button class="btn primary full" type="submit">Enviar inscripción por WhatsApp</button>
+          <p class="form-note">También puedes escribir directamente al WhatsApp del instructor.</p>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> Ing. Jonathan Romero Lagos · Workshop Power Apps SST</p>
+  <a class="whatsapp" href="https://wa.me/51966840281?text=Hola%20Ing.%20Jonathan%2C%20deseo%20informaci%C3%B3n%20del%20Workshop%20Power%20Apps%20SST" target="_blank" rel="noopener">WhatsApp</a>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <p>© 2026 Power Apps SST · Ing. Jonathan Romero Lagos</p>
+      <a href="#inicio">Volver arriba</a>
+    </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
