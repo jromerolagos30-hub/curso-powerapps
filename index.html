@@ -1,183 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Workshop Power Apps SST | Ing. Jonathan Romero Lagos</title>
-  <meta name="description" content="Workshop práctico para desarrollar aplicativos de SST usando Power Apps, SharePoint, Power Automate y Power BI. Incluye proyectos reales, clases grabadas y asesoría personalizada." />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Workshop práctico para desarrollar aplicativos de SST usando Power Apps, SharePoint, Power Automate y Power BI." />
+  <link rel="icon" href="favicon.svg" />
+  <style>
+    :root{
+      --navy:#071d3a;--blue:#155cff;--cyan:#18c7e6;--purple:#9b4dff;--ink:#0a2145;--muted:#526887;--line:#dce8f8;--soft:#f3f8ff;--white:#fff;
+      --shadow:0 22px 60px rgba(9,35,75,.14);--radius:26px;
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}.container{width:min(1180px,92vw);margin:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:20px}.logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#ca4bd8,#7557ff);transform:rotate(45deg);box-shadow:0 8px 22px rgba(155,77,255,.28)}
+    .links{display:flex;align-items:center;gap:28px;font-weight:800}.links a{color:var(--ink);text-decoration:none}.btn{border:0;border-radius:16px;padding:13px 22px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px}.btn-primary{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;box-shadow:0 15px 35px rgba(21,92,255,.25)}.btn-ghost{border:1.5px solid #b7cdf0;color:var(--blue);background:#fff}.whatsapp{background:#19c463;color:#fff;border-radius:50%;width:44px;height:44px;justify-content:center;padding:0;font-size:22px}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 10% 25%,#e9f4ff 0 22%,transparent 48%),linear-gradient(120deg,#f9fcff,#eef7ff 54%,#f7f1ff);padding:70px 0 50px;border-bottom:1px solid var(--line)}
+    .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#9ec4ff 1px,transparent 1px);background-size:18px 18px;opacity:.28;mask-image:linear-gradient(90deg,#000,transparent 35%,transparent 72%,#000)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:.86fr 1.14fr;gap:42px;align-items:center}.pill{display:inline-flex;align-items:center;gap:8px;background:#dbeaff;color:#0755dd;font-weight:950;border-radius:999px;padding:8px 14px;text-transform:uppercase;letter-spacing:.08em;font-size:13px}
+    h1{font-size:clamp(42px,5vw,76px);line-height:.98;margin:18px 0 10px;letter-spacing:-.055em;color:#071b3b}.gradient{background:linear-gradient(90deg,#115dff,#a044ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:18px;color:#355075;max-width:620px}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:28px 0}.feature{display:flex;gap:10px;align-items:center;font-weight:900}.feature span{display:block;font-weight:500;color:var(--muted);font-size:13px}.ico{width:34px;height:34px;border-radius:12px;border:1px solid #b8d3ff;color:var(--blue);display:grid;place-items:center;background:#fff}
+    .hero-card{background:#fff;border:1px solid #d7e7fb;border-radius:28px;box-shadow:var(--shadow);padding:12px;transform:perspective(1100px) rotateY(-2deg);position:relative}.hero-card img{width:100%;height:auto;display:block;border-radius:20px}.badge-float{position:absolute;background:#fff;border-radius:16px;padding:12px 18px;font-weight:950;box-shadow:0 15px 35px rgba(7,29,58,.16)}.b1{left:-25px;bottom:55px}.b2{right:-18px;top:58px}
+    section{padding:64px 0}.section-title{text-align:center;max-width:820px;margin:0 auto 34px}.section-title h2{font-size:clamp(30px,3vw,44px);line-height:1.08;margin:0 0 10px;color:#081d3c;letter-spacing:-.035em}.section-title p{color:var(--muted);margin:0}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{border:1px solid #d8e7fa;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 15px 40px rgba(10,33,69,.08);transition:.25s}.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}.thumb{height:210px;background:#eaf3fb;position:relative;overflow:hidden;cursor:pointer}.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s}.card:hover .thumb img{transform:scale(1.04)}.zoom{position:absolute;right:12px;top:12px;background:rgba(255,255,255,.95);border:1px solid #dbe8fb;border-radius:999px;padding:8px 11px;font-weight:950;color:var(--blue)}.card-body{padding:22px}.tag{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#08aadd;font-weight:950}.card h3{margin:8px 0 8px;font-size:20px}.card p{margin:0;color:#4d6382;font-size:15px}.details{margin-top:18px;color:var(--blue);font-weight:950;background:none;border:0;cursor:pointer;padding:0}
+    .modules{background:linear-gradient(180deg,#f5fbff,#fff)}.timeline{display:grid;grid-template-columns:repeat(7,1fr);gap:14px}.module{border:1px solid #d7e6f8;border-radius:18px;background:#fff;padding:18px;box-shadow:0 12px 28px rgba(7,29,58,.06)}.module b{color:var(--blue);display:block;margin-bottom:6px}.module span{font-size:14px;color:var(--muted)}
+    .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.benefit{border:1px solid #d9e8fa;border-radius:20px;padding:24px;background:#fff;box-shadow:0 12px 32px rgba(10,33,69,.06)}.benefit strong{display:block;font-size:18px;margin:10px 0 4px}.price-box{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;background:linear-gradient(135deg,#071d3a,#0b376c);color:#fff;border-radius:30px;padding:36px;box-shadow:var(--shadow)}.price-box h2{font-size:40px;margin:0}.price{font-size:56px;font-weight:950;color:#18d8f4}.price-box p{color:#d8eaff}.price-list{display:grid;gap:10px}.price-list div{background:rgba(255,255,255,.1);padding:13px 16px;border-radius:16px}.form{background:#fff;color:var(--ink);border-radius:24px;padding:24px}.form input,.form select,.form textarea{width:100%;padding:13px 14px;border:1px solid #cadbf0;border-radius:14px;margin:8px 0;font:inherit}.form textarea{min-height:90px}.form .btn{width:100%;justify-content:center;margin-top:8px}
+    .faq{max-width:900px;margin:auto}.faq details{border:1px solid #dbe8fa;border-radius:18px;background:#fff;margin:12px 0;padding:18px}.faq summary{font-weight:950;cursor:pointer}.footer{padding:36px 0;background:#06172f;color:#d9e7fa;text-align:center}.float-wa{position:fixed;right:20px;bottom:20px;z-index:45;background:#18c463;color:#fff;text-decoration:none;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 18px 36px rgba(24,196,99,.35)}
+    .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(2,13,30,.76);padding:22px}.modal.open{display:flex}.modal-box{width:min(1000px,96vw);background:#111827;border-radius:24px;padding:18px;box-shadow:0 30px 90px rgba(0,0,0,.4);position:relative}.modal-img{width:100%;max-height:78vh;object-fit:contain;background:#0b1220;border-radius:18px;display:block}.modal-title{color:#fff;text-align:center;font-weight:900;margin-top:10px}.modal-close,.modal-prev,.modal-next{position:absolute;border:0;background:rgba(255,255,255,.95);color:#071d3a;border-radius:50%;width:44px;height:44px;font-size:24px;cursor:pointer}.modal-close{right:-12px;top:-12px}.modal-prev{left:-18px;top:50%}.modal-next{right:-18px;top:50%}
+    @media(max-width:920px){.links a{display:none}.hero-grid,.price-box{grid-template-columns:1fr}.projects{grid-template-columns:1fr 1fr}.timeline,.benefits{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr 1fr}.hero-card{transform:none}.b1,.b2{display:none}}
+    @media(max-width:620px){.projects,.timeline,.benefits{grid-template-columns:1fr}.nav{height:64px}.brand{font-size:18px}.links{gap:8px}.hero{padding:38px 0}.thumb{height:190px}.modal-prev{left:4px}.modal-next{right:4px}.modal-close{right:4px;top:4px}}
+  </style>
 </head>
 <body>
-  <header class="site-header" id="inicio">
-    <nav class="nav wrap">
-      <a class="brand" href="#inicio"><span></span><strong>Power Apps SST</strong></a>
-      <button class="menu-btn" aria-label="Abrir menú" id="menuBtn">☰</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#beneficios">Beneficios</a>
-        <a href="#temario">Temario</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#inversion">Inversión</a>
-        <a class="nav-cta" href="#inscripcion">Inscribirme</a>
-      </div>
-    </nav>
-  </header>
+  <header class="topbar"><div class="container nav"><div class="brand"><div class="logo"></div>Power Apps SST</div><nav class="links"><a href="#inicio">Inicio</a><a href="#temario">Temario</a><a href="#proyectos">Proyectos</a><a href="#beneficios">Beneficios</a><a href="#faq">FAQ</a><a class="btn btn-primary" href="#inscripcion">Inscríbeme ahora →</a><a class="btn whatsapp" href="https://wa.me/51966840281" target="_blank">☘</a></nav></div></header>
 
-  <main>
-    <section class="hero section">
-      <div class="wrap hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Workshop práctico · 8 horas · En vivo + grabación</p>
-          <h1>Desarrolla un aplicativo de SST usando Microsoft Power Apps</h1>
-          <p class="lead">Aprende a construir soluciones digitales reales para seguridad y salud: desde el bosquejo inicial, listas en SharePoint, formularios en Power Apps, flujos en Power Automate y dashboards en Power BI.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#inscripcion">Quiero inscribirme</a>
-            <a class="btn ghost" href="#proyectos">Ver proyectos reales</a>
-          </div>
-          <div class="metrics">
-            <article><b>8 h</b><span>de workshop</span></article>
-            <article><b>7</b><span>módulos prácticos</span></article>
-            <article><b>S/ 300</b><span>inversión</span></article>
-          </div>
-        </div>
-        <div class="hero-visual reveal">
-          <div class="glow"></div>
-          <img src="hero-workshop.png" alt="Workshop desarrollando aplicativo de SST usando Power Apps" />
-          <div class="floating-card card-one">Power Apps</div>
-          <div class="floating-card card-two">SharePoint + Power BI</div>
-        </div>
-      </div>
-    </section>
+  <main id="inicio" class="hero"><div class="container hero-grid"><div><span class="pill">Workshop práctico • 8 horas</span><h1>Desarrolla un aplicativo de SST usando <span class="gradient">Power Apps</span></h1><h3 style="color:#0959f6;margin:0 0 8px;font-size:22px">Digitaliza, automatiza y visualiza procesos de SST</h3><p class="lead">Aprende a crear aplicaciones funcionales desde el bosquejo inicial, listas en SharePoint, pantallas en Power Apps, flujos en Power Automate y dashboards en Power BI.</p><div class="features"><div class="feature"><i class="ico">⏱</i>8 horas<span>de workshop</span></div><div class="feature"><i class="ico">📘</i>7 módulos<span>prácticos</span></div><div class="feature"><i class="ico">🏅</i>Certificado<span>participación</span></div><div class="feature"><i class="ico">👥</i>Aprendizaje<span>100% práctico</span></div></div><div style="display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn-primary" href="#inscripcion">Quiero inscribirme</a><a class="btn btn-ghost" href="#temario">Ver temario completo</a></div></div><div class="hero-card"><img src="hero-workshop.png" alt="Workshop desarrollando aplicativo de SST usando Power Apps" onclick="openModal(0)"><div class="badge-float b1">SharePoint + Power BI</div><div class="badge-float b2">Power Apps</div></div></div></main>
 
-    <section class="section logos-strip">
-      <div class="wrap stack-line">
-        <span>Herramientas que usarás:</span>
-        <b>Power Apps</b><b>SharePoint</b><b>Power Automate</b><b>Power BI</b><b>Microsoft 365</b>
-      </div>
-    </section>
+  <section id="proyectos"><div class="container"><div class="section-title"><h2>Proyectos y casos reales que desarrollarás</h2><p>Casos prácticos basados en soluciones de SST: inspecciones, monitoreo, registros digitales, dashboards y automatización.</p></div><div class="projects" id="projectGrid"></div></div></section>
 
-    <section class="section" id="beneficios">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="eyebrow">Enfoque del curso</p>
-          <h2>Aprendizaje basado en aplicativos reales de SST</h2>
-          <p>No es un curso teórico. Trabajarás con una metodología aplicada para diseñar, registrar, automatizar y visualizar información de seguridad y salud.</p>
-        </div>
-        <div class="benefit-grid">
-          <article class="benefit reveal"><span>01</span><h3>Diseño del aplicativo</h3><p>De la idea y bosquejo inicial al flujo completo de pantallas, formularios, navegación y validaciones.</p></article>
-          <article class="benefit reveal"><span>02</span><h3>Base de datos en SharePoint</h3><p>Creación de sitios, listas, columnas, relaciones y origen de datos para tus registros digitales.</p></article>
-          <article class="benefit reveal"><span>03</span><h3>Automatización</h3><p>Flujos con Power Automate para guardar registros, enviar correos y mejorar el control documental.</p></article>
-          <article class="benefit reveal"><span>04</span><h3>Dashboard gerencial</h3><p>Visualización de indicadores en Power BI para seguimiento, análisis y toma de decisiones.</p></article>
-        </div>
-      </div>
-    </section>
+  <section id="temario" class="modules"><div class="container"><div class="section-title"><h2>Temario del workshop</h2><p>Ruta práctica desde el diseño inicial hasta el dashboard de resultados.</p></div><div class="timeline"><div class="module"><b>Módulo 1</b><span>Bosquejo inicial, mockups y estructura del aplicativo.</span></div><div class="module"><b>Módulo 2</b><span>SharePoint: sitios, listas y orígenes de datos.</span></div><div class="module"><b>Módulo 3</b><span>Power Apps I: pantallas, botones, navegación y formularios.</span></div><div class="module"><b>Módulo 4</b><span>Power Apps II: Patch, edición, carga y registro.</span></div><div class="module"><b>Módulo 5</b><span>Power Automate: flujos, PDF y comunicación digital.</span></div><div class="module"><b>Módulo 6</b><span>Envío de registros a SharePoint y Outlook.</span></div><div class="module"><b>Módulo 7</b><span>Power BI: importación, DAX y dashboards.</span></div></div></div></section>
 
-    <section class="section dark" id="temario">
-      <div class="wrap">
-        <div class="section-head light reveal">
-          <p class="eyebrow">Temario</p>
-          <h2>Ruta de aprendizaje del workshop</h2>
-          <p>Contenido organizado por módulos para que termines con un aplicativo funcional y replicable.</p>
-        </div>
-        <div class="timeline">
-          <div class="time-card reveal"><b>Módulo 01</b><h3>Planeamiento inicial</h3><p>Bosquejo, herramientas de diseño y estructura del proyecto final.</p></div>
-          <div class="time-card reveal"><b>Módulo 02</b><h3>SharePoint</h3><p>Creación de sitio, listas, orígenes de datos y estructura de información.</p></div>
-          <div class="time-card reveal"><b>Módulo 03</b><h3>Power Apps I</h3><p>Aplicativos desde listas, imágenes, botones, formularios y función SubmitForm.</p></div>
-          <div class="time-card reveal"><b>Módulo 04</b><h3>Power Apps II</h3><p>Patch, edición de registros, control de errores e inserción de tablas.</p></div>
-          <div class="time-card reveal"><b>Módulo 05</b><h3>Power Automate</h3><p>Flujos hacia SharePoint, correos y registro documental.</p></div>
-          <div class="time-card reveal"><b>Módulo 06</b><h3>Power Apps III</h3><p>Envío de registros digitales al SharePoint y Outlook.</p></div>
-          <div class="time-card reveal"><b>Módulo 07</b><h3>Power BI</h3><p>Importación de registros, medidas DAX y dashboards.</p></div>
-        </div>
-        <div class="temario-images reveal">
-          <img src="temario-1.png" alt="Temario del workshop módulos 1 al 3" />
-          <img src="temario-2.png" alt="Temario del workshop módulos 4 al 7" />
-        </div>
-      </div>
-    </section>
+  <section id="beneficios"><div class="container"><div class="section-title"><h2>Lo que incluye</h2><p>Todo lo necesario para avanzar de una idea a un aplicativo funcional.</p></div><div class="benefits"><div class="benefit">🎥<strong>Clases grabadas</strong><span>Acceso al material del workshop.</span></div><div class="benefit">🧩<strong>Plantillas base</strong><span>Formatos y estructura de listas.</span></div><div class="benefit">👨‍🏫<strong>Asesoría personalizada</strong><span>Soporte para tu proyecto final.</span></div><div class="benefit">📊<strong>Dashboard</strong><span>Visualización de datos en Power BI.</span></div></div></div></section>
 
-    <section class="section" id="proyectos">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <p class="eyebrow">Portafolio incluido</p>
-          <h2>Proyectos reales que inspiran el workshop</h2>
-          <p>Estos casos muestran el tipo de soluciones que aprenderás a diseñar y replicar para diferentes procesos de SST.</p>
-        </div>
-        <div class="project-grid">
-          <article class="project reveal"><img src="seg-1.jpg" alt="Aplicativo de inspección de EPP"/><div><span>Power Apps + Power BI</span><h3>Inspección de EPP</h3><p>Registro digital para inspeccionar EPP básico, trabajos en caliente y trabajos en altura, con porcentaje de cumplimiento y dashboard.</p></div></article>
-          <article class="project reveal"><img src="seg-2.jpg" alt="Pantallas de inspección de EPP"/><div><span>Control operativo</span><h3>Cumplimiento de EPP</h3><p>Captura de datos, evaluación de cumplimiento, recomendaciones y toma de decisiones basada en datos.</p></div></article>
-          <article class="project reveal"><img src="seg-3.jpg" alt="Aplicativo de extintores"/><div><span>Inventario + inspección</span><h3>Equipos de emergencia</h3><p>Gestión de extintores, inventarios, inspecciones, vencimientos y estado operativo en tiempo real.</p></div></article>
-          <article class="project reveal"><img src="seg-5.jpg" alt="Observaciones planeadas de tarea"/><div><span>Gestión preventiva</span><h3>Observaciones Planeadas de Tarea</h3><p>Documentación de tareas, identificación de desviaciones y seguimiento de acciones correctivas.</p></div></article>
-          <article class="project reveal"><img src="seg-6.jpg" alt="Inspección interna SST"/><div><span>RM-050-2013</span><h3>Inspección interna SST</h3><p>Digitalización de inspecciones internas con registro, seguimiento de hallazgos y generación de reportes.</p></div></article>
-          <article class="project reveal"><img src="salud-1.jpg" alt="Monitoreo de ruido"/><div><span>Higiene ocupacional</span><h3>Monitoreo de ruido</h3><p>Registro de mediciones, cálculo de atenuación final y horas máximas de exposición para gestión preventiva.</p></div></article>
-          <article class="project reveal"><img src="dig-1.jpg" alt="Entrega de EPP"/><div><span>SharePoint + kardex</span><h3>Entrega de EPP / emergencia</h3><p>Kardex digital, inventario, entrega de equipos, reportes y análisis de consumo semanal o mensual.</p></div></article>
-          <article class="project reveal"><img src="dig-5.jpg" alt="Ventajas de proceso digital"/><div><span>Transformación digital</span><h3>Procesos digitales en SST</h3><p>Eliminación de formularios físicos, registros centralizados, descarga de data y dashboards gerenciales.</p></div></article>
-        </div>
-      </div>
-    </section>
+  <section id="inscripcion"><div class="container price-box"><div><h2>Inscríbete al workshop</h2><p>Duración total: 8 horas. Modalidad práctica. Inicio sujeto a cobertura de vacantes.</p><div class="price">S/ 300</div><div class="price-list"><div>✅ Módulos del 01 al 03: 11 de enero, 14:00 a 17:00</div><div>✅ Módulos del 04 al 07: 12 de enero, 08:00 a 11:00</div><div>✅ Asesoramiento personalizado: 02 horas</div><div>✅ Licencia educativa Microsoft 365 por 14 días</div></div></div><form class="form" onsubmit="sendWhatsApp(event)"><h3>Solicitar información</h3><input id="name" placeholder="Nombre y apellido" required><input id="phone" placeholder="Celular" required><select id="profile"><option>Supervisor SST</option><option>Ingeniero de Seguridad</option><option>Prevencionista</option><option>Estudiante</option><option>Otro</option></select><textarea id="message" placeholder="Consulta adicional"></textarea><button class="btn btn-primary" type="submit">Enviar por WhatsApp</button></form></div></section>
 
-    <section class="section pale" id="inversion">
-      <div class="wrap pricing-grid">
-        <div class="pricing-copy reveal">
-          <p class="eyebrow">Detalles del workshop</p>
-          <h2>Una inversión práctica para crear soluciones reales</h2>
-          <p>Incluye clases grabadas, tutoría personalizada y licencia educativa Microsoft 365 por 14 días desde el inicio del workshop.</p>
-          <ul class="check-list">
-            <li>Duración: 8 horas.</li>
-            <li>Módulos 01 al 03: 11 de enero, 14:00 a 17:00.</li>
-            <li>Módulos 04 al 07: 12 de enero, 08:00 a 11:00.</li>
-            <li>Asesoramiento personalizado: 2 horas.</li>
-          </ul>
-        </div>
-        <aside class="price-card reveal">
-          <span>Inversión</span>
-          <strong>S/ 300</strong>
-          <p>Cupos sujetos a cobertura mínima de 10 inscritos.</p>
-          <a class="btn primary full" href="#inscripcion">Reservar mi cupo</a>
-        </aside>
-      </div>
-    </section>
+  <section id="faq"><div class="container"><div class="section-title"><h2>Preguntas frecuentes</h2></div><div class="faq"><details><summary>¿Necesito saber programar?</summary><p>No. El curso está orientado a crear aplicativos funcionales con Power Apps, SharePoint, Power Automate y Power BI de forma práctica.</p></details><details><summary>¿El curso es aplicable a SST?</summary><p>Sí. Los ejemplos están orientados a inspecciones, registros digitales, monitoreos, dashboards y controles de SST.</p></details><details><summary>¿Cómo me inscribo?</summary><p>Completa el formulario o escribe al WhatsApp +51 966 840 281.</p></details></div></div></section>
+  <footer class="footer"><div class="container"><b>Ing. Jonathan Romero Lagos</b><br>Workshop Desarrollando Aplicativos de SST usando Power Apps</div></footer><a class="float-wa" href="https://wa.me/51966840281" target="_blank">☘</a>
 
-    <section class="section instructor">
-      <div class="wrap instructor-card reveal">
-        <div>
-          <p class="eyebrow">Instructor</p>
-          <h2>Ing. Jonathan Romero Lagos</h2>
-          <p>Especialista en SST y transformación digital aplicada a procesos de seguridad, con experiencia desarrollando aplicativos, flujos y dashboards para gestionar registros operativos de manera más ágil y trazable.</p>
-        </div>
-        <div class="instructor-badges"><span>Power Apps</span><span>SharePoint</span><span>Power Automate</span><span>Power BI</span><span>SST</span></div>
-      </div>
-    </section>
+  <div class="modal" id="modal" onclick="closeModalBackdrop(event)"><div class="modal-box"><button class="modal-close" onclick="closeModal()">×</button><button class="modal-prev" onclick="prevImg()">‹</button><img id="modalImg" class="modal-img" src="" alt="Vista ampliada"><button class="modal-next" onclick="nextImg()">›</button><div class="modal-title" id="modalTitle"></div></div></div>
 
-    <section class="section" id="inscripcion">
-      <div class="wrap form-grid">
-        <div class="section-head align-left reveal">
-          <p class="eyebrow">Inscripciones e informes</p>
-          <h2>Solicita tu inscripción por WhatsApp</h2>
-          <p>Completa tus datos y se abrirá WhatsApp con un mensaje listo para enviar.</p>
-          <div class="contact-box">📲 +51 966 840 281</div>
-        </div>
-        <form class="form-card reveal" id="leadForm">
-          <label>Nombre y apellido<input type="text" id="nombre" placeholder="Ej. Carlos Pérez" required /></label>
-          <label>Empresa o institución<input type="text" id="empresa" placeholder="Ej. Contratista / Independiente" /></label>
-          <label>Celular<input type="tel" id="celular" placeholder="Ej. 999 999 999" required /></label>
-          <label>Correo<input type="email" id="correo" placeholder="correo@empresa.com" /></label>
-          <label>Consulta<textarea id="mensaje" rows="4" placeholder="Deseo información para inscribirme al workshop de Power Apps SST"></textarea></label>
-          <button class="btn primary full" type="submit">Enviar inscripción por WhatsApp</button>
-          <p class="form-note">También puedes escribir directamente al WhatsApp del instructor.</p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <a class="whatsapp" href="https://wa.me/51966840281?text=Hola%20Ing.%20Jonathan%2C%20deseo%20informaci%C3%B3n%20del%20Workshop%20Power%20Apps%20SST" target="_blank" rel="noopener">WhatsApp</a>
-
-  <footer class="footer">
-    <div class="wrap footer-grid">
-      <p>© 2026 Power Apps SST · Ing. Jonathan Romero Lagos</p>
-      <a href="#inicio">Volver arriba</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+<script>
+const projects=[
+  {img:'seg-1.jpg',tag:'Power Apps + Power BI',title:'Inspección de EPP',desc:'Registro digital para inspeccionar EPP básico, trabajos en caliente y trabajos en altura, con porcentaje de cumplimiento y dashboard.'},
+  {img:'seg-2.jpg',tag:'Control operativo',title:'Cumplimiento de EPP',desc:'Captura de datos, evaluación de cumplimiento, recomendaciones y toma de decisiones basada en datos.'},
+  {img:'seg-3.jpg',tag:'Inventario + inspección',title:'Equipos de emergencia',desc:'Gestión de extintores, inventarios, inspecciones, vencimientos y estado operativo en tiempo real.'},
+  {img:'seg-4.jpg',tag:'Gestión preventiva',title:'Observaciones Planeadas de Tarea',desc:'Documentación de tareas, identificación de desviaciones y seguimiento de acciones correctivas.'},
+  {img:'seg-5.jpg',tag:'RM-050-2013',title:'Inspección interna SST',desc:'Digitalización de inspecciones internas con registro, seguimiento de hallazgos y generación de reportes.'},
+  {img:'salud-1.jpg',tag:'Higiene ocupacional',title:'Monitoreo de ruido',desc:'Registro de mediciones, cálculo de atenuación final y horas máximas de exposición para gestión preventiva.'}
+];
+const gallery=[{img:'hero-workshop.png',title:'Workshop desarrollando aplicativo de SST usando Power Apps'},...projects];
+const grid=document.getElementById('projectGrid');
+grid.innerHTML=projects.map((p,i)=>`<article class="card"><div class="thumb" onclick="openModal(${i+1})"><img src="${p.img}" alt="${p.title}"><span class="zoom">Ver imagen ⛶</span></div><div class="card-body"><span class="tag">${p.tag}</span><h3>${p.title}</h3><p>${p.desc}</p><button class="details" onclick="openModal(${i+1})">Ver detalles →</button></div></article>`).join('');
+let current=0;function openModal(i){current=i;document.getElementById('modalImg').src=gallery[current].img;document.getElementById('modalTitle').textContent=(current+1)+' / '+gallery.length+' — '+gallery[current].title;document.getElementById('modal').classList.add('open')}function closeModal(){document.getElementById('modal').classList.remove('open')}function prevImg(){current=(current-1+gallery.length)%gallery.length;openModal(current)}function nextImg(){current=(current+1)%gallery.length;openModal(current)}function closeModalBackdrop(e){if(e.target.id==='modal')closeModal()}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();if(e.key==='ArrowRight')nextImg();if(e.key==='ArrowLeft')prevImg()});
+function sendWhatsApp(e){e.preventDefault();const n=document.getElementById('name').value;const ph=document.getElementById('phone').value;const pr=document.getElementById('profile').value;const msg=document.getElementById('message').value;const text=`Hola Ing. Jonathan, deseo información para inscribirme al Workshop de Power Apps SST.%0A%0ANombre: ${encodeURIComponent(n)}%0ACelular: ${encodeURIComponent(ph)}%0APerfil: ${encodeURIComponent(pr)}%0AConsulta: ${encodeURIComponent(msg)}`;window.open(`https://wa.me/51966840281?text=${text}`,'_blank')}
+</script>
 </body>
 </html>

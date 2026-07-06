@@ -1,16 +1,14 @@
-# Curso Power Apps SST - Landing Page 3.0
+# Workshop Power Apps SST - Versión 4.0
 
-Versión 3.0 optimizada para GitHub Pages.
+Landing page premium para publicar el curso de Power Apps SST en GitHub Pages.
 
-## Importante
-Esta versión NO usa carpeta `assets`. Todas las imágenes están en la misma carpeta principal que `index.html`, para evitar errores de rutas en GitHub.
+## Mejoras incluidas
+- Imagen principal del workshop en mayor tamaño.
+- Solo 6 proyectos visibles.
+- Se retiraron Entrega de EPP / emergencia y Procesos digitales en SST.
+- Ventana emergente para ampliar imágenes al hacer clic.
+- Diseño responsive, moderno y profesional.
+- Formulario conectado a WhatsApp: +51 966 840 281.
 
-## Cómo subir a GitHub
-1. Descomprime este ZIP.
-2. En tu repositorio de GitHub, entra a **Add file > Upload files**.
-3. Arrastra TODO el contenido descomprimido: `index.html`, `styles.css`, `script.js`, imágenes y `README.md`.
-4. Presiona **Commit changes**.
-5. Espera 1 a 3 minutos y actualiza tu web con **Ctrl + F5**.
-
-## Contacto configurado
-WhatsApp: +51 966 840 281
+## Publicación
+Sube todos los archivos descomprimidos a la raíz del repositorio y activa GitHub Pages desde `main / root`.
